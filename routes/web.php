@@ -25,3 +25,9 @@ Route::get('/insertar',function(){
     // Insert into users (email, name, password) values ('?,?,?')
     return dd($user);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.list');
