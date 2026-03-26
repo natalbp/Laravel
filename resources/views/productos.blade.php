@@ -159,14 +159,15 @@
                 `;
             });
             divCarrito.innerHTML += `<p>Total: ${suma}</p>`;
+            divCarrito.innerHTML += `<a ref="/checkout">Continuar al Pago</a>`;
         }
 
 
-        function eliminarDelCarrito(index) {
-            if (carrito[index].cantidad > 1) {
-                carrito[index].cantidad--;
+        function eliminarDelCarrito(posicion) {
+            if (carrito[posicion].cantidad > 1) {
+                carrito[posicion].cantidad--;
             } else {
-                carrito.splice(index, 1);
+                carrito.splice(posicion, 1);
             }
             localStorage.setItem("carrito", JSON.stringify(carrito));
             mostrarCarrito();
