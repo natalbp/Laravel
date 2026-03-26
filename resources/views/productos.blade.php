@@ -110,6 +110,9 @@
     <ul class="productos-lista">
         @foreach($products as $product)
             <li class="producto-item">
+                <div class="imagen">
+                <img src="https://static.wikia.nocookie.net/despicableme/images/9/93/Otto_standing.png/revision/latest/scale-to-width-down/1200?cb=20241103152642" alt="{{ $product->name }}" width="100%">
+                </div>
                 <span>{{ $product->name }}</span>
                 <span>{{ $product->description }}</span>
                 <span>{{ $product->price }}</span>
@@ -159,7 +162,7 @@
                 `;
             });
             divCarrito.innerHTML += `<p>Total: ${suma}</p>`;
-            divCarrito.innerHTML += `<a ref="/checkout">Continuar al Pago</a>`;
+            divCarrito.innerHTML += `<a href="/checkout">Continuar al Pago</a>`;
         }
 
 

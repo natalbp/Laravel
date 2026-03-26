@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function (){
     return view('welcome');
@@ -28,10 +31,12 @@ Route::get('/insertar',function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.list');
+Route::get('/products', [ProductController::class, 'index'])->name('products.list');
 
 Route::get('/checkout', function(){
     return view('checkout');
 });
+
+Route::post('/orders', [OrderController::class, 'store']);

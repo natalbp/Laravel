@@ -1,10 +1,11 @@
 <h1>Checkout</h1>
 
 <div class="resumen">
-    <form action="/procesar" method= "POST">
+    <form action="/orders" method= "post">
         <div id="products">
-
         </div>
+        <button type="submit">Enviar</button>
+        @csrf
     </form>
 </div>
 
